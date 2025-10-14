@@ -1,11 +1,10 @@
 package de.phl.programmingproject;
 
-import java.util.Objects;
 import java.util.Optional;
 
 public class Student {
     
-    public Student(String name, String matrikelnummer, String profileImageUrl) {
+    public Student(String name, String studentId, String profileImageUrl) {
         //TODO: implement your code here
     }
 
@@ -13,7 +12,7 @@ public class Student {
         return null; //TODO: implement your code here
     }
 
-    public String getMatrikelnummer() {
+    public String getStudentId() {
         return null; //TODO: implement your code here
     }
 

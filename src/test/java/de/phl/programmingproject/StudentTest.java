@@ -1,9 +1,5 @@
 package de.phl.programmingproject;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -11,7 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class StudentTest extends TestBase {
 
@@ -31,22 +32,22 @@ public class StudentTest extends TestBase {
     // --- Aufgabe 1: Immutable Felder + Getter ---
 
     @Test
-    void task_1_student_has_private_final_fields_for_name_and_matrikelnummer() throws Exception {
+    void task_1_student_has_private_final_fields_for_name_and_studentid() throws Exception {
         Field nameField = Student.class.getDeclaredField("name");
-        Field matrikelField = Student.class.getDeclaredField("matrikelnummer");
+        Field studentIdField = Student.class.getDeclaredField("studentId");
 
         assertTrue(Modifier.isPrivate(nameField.getModifiers()), "Field 'name' must be private.");
         assertTrue(Modifier.isFinal(nameField.getModifiers()), "Field 'name' must be final.");
 
-        assertTrue(Modifier.isPrivate(matrikelField.getModifiers()), "Field 'matrikelnummer' must be private.");
-        assertTrue(Modifier.isFinal(matrikelField.getModifiers()), "Field 'matrikelnummer' must be final.");
+        assertTrue(Modifier.isPrivate(studentIdField.getModifiers()), "Field 'studentId' must be private.");
+        assertTrue(Modifier.isFinal(studentIdField.getModifiers()), "Field 'studentId' must be final.");
     }
 
     @Test
     void task_1_constructor_sets_required_fields_and_getters_return_values() {
         Student s = new Student("Anna", "12345", null);
         assertEquals("Anna", s.getName(), "getName() should return the constructor value.");
-        assertEquals("12345", s.getMatrikelnummer(), "getMatrikelnummer() should return the constructor value.");
+        assertEquals("12345", s.getStudentId(), "getStudentId() should return the constructor value.");
     }
 
     // --- Aufgabe 2: Optional profileImageUrl ---
