@@ -17,8 +17,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"github.classroom",
-				"oracle.oracle-java",
+				"vscjava.vscode-java-pack",
 				"mermaidchart.vscode-mermaid-chart",
 				"yzhang.markdown-all-in-one"
 			],
@@ -28,7 +27,6 @@
 				"git.autofetchPeriod": 300,
 				"git.postCommitCommand": "sync",
 				// point to the Java 21 JDK installed in the container, so it does not look for a JDK installed by SDKMAN (which is not installed in this container due to the use of "ghcr.io/devcontainers/features/java:1")
-				"java.jdt.ls.home": "/usr/local/openjdk-21",
 				"java.import.gradle.java.home": "/usr/local/openjdk-21"
 			}
 		}
